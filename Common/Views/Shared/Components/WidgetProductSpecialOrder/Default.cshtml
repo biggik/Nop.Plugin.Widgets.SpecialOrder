@@ -1,0 +1,20 @@
+﻿@model SpecialOrderModel
+@using Nop.Plugin.Widgets.SpecialOrder.Models;
+@using Nop.Plugin.Widgets.SpecialOrder.Controllers;
+@using Nop.Plugin.Widgets.SpecialOrder.Resources;
+@using System.Linq;
+
+@{
+    NopHtml.AddCssFileParts("~/Plugins/Widgets.SpecialOrder/Content/SpecialOrder.css", excludeFromBundle: true);
+}
+
+@if (Model != null && Model.FullPriceValue > 0m)
+{
+    var price = "<span class=\"value\">" + @Model.FullPrice.Trim('.') + "</span>";
+    var msg = string.Format(T(SpecialOrderResources.Description).Text, price);
+    <div class="specialorder">
+        <span class="title">@T(SpecialOrderResources.Title)</span>
+        <br/>
+        <span class="description">@Html.Raw(msg)</span>
+    </div>
+}

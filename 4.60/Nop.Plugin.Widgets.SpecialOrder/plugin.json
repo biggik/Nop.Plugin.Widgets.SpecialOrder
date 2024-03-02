@@ -1,0 +1,11 @@
+{
+  "Group": "Widgets",
+  "FriendlyName": "SpecialOrder",
+  "SystemName": "Widgets.SpecialOrder",
+  "Version": "1.0.0",
+  "SupportedVersions": [ "4.60" ],
+  "Author": "Status ehf",
+  "DisplayOrder": 1,
+  "FileName": "Nop.Plugin.Widgets.SpecialOrder.dll",
+  "Description": "This plugin enables special orders where customer pays a down payment of the full price"
+}

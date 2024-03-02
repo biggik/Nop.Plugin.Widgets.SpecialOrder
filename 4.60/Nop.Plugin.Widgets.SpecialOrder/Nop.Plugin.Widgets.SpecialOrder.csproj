@@ -1,0 +1,168 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<MvcBuildViews>true</MvcBuildViews>
+	</PropertyGroup>
+
+	<Import Project="$(MSBuildThisFileDirectory)../../Common/Common.Build.props" />
+
+	<ItemGroup>
+		<None Remove="logo.jpg" />
+		<None Remove="plugin.json" />
+	</ItemGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<OutputPath>..\_build\release</OutputPath>
+		<OutDir>$(OutputPath)</OutDir>
+		<DefineConstants>TRACE;NOP_ASYNC;NOP_45;NOP_46</DefineConstants>
+		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<OutputPath>..\_build\debug</OutputPath>
+		<OutDir>$(OutputPath)</OutDir>
+		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+		<DefineConstants>NOP_ASYNC;NOP_45;NOP_46</DefineConstants>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Include="..\..\Common\Components\WidgetsProductSpecialOrderViewComponent.cs" Link="Components\WidgetsProductSpecialOrderComponent.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="..\..\Common\Content\SpecialOrder.css" Link="Content\SpecialOrder.css">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Include="..\..\Common\Content\SpecialOrder.css.map" Link="Content\SpecialOrder.css.map">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Include="..\..\Common\Content\SpecialOrder.less" Link="Content\SpecialOrder.less">
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</None>
+		<None Include="..\..\Common\Content\SpecialOrder.min.css" Link="Content\SpecialOrder.min.css">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Include="..\..\Common\Controllers\SpecialOrderController.Admin.cs" Link="Controllers\SpecialOrderController.Admin.cs" />
+		<Compile Include="..\..\Common\Controllers\SpecialOrderController.cs" Link="Controllers\SpecialOrderController.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Include="..\..\Common\Infrastructure\NopStartup.cs" Link="Infrastructure\NopStartup.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Include="..\..\Common\Models\ConfigurationModel.cs" Link="Models\ConfigurationModel.cs" />
+		<Compile Include="..\..\Common\Models\SpecialOrderModel.cs" Link="Models\SpecialOrderModel.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Include="..\..\Common\Resources\ResourceNames.cs" Link="Resources\ResourceNames.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Include="..\..\Common\Services\SpecialOrderService.cs" Link="Services\SpecialOrderService.cs" />
+		<Compile Include="..\..\Common\Services\ISpecialOrderService.cs" Link="Services\ISpecialOrderService.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+
+		<None Include="..\..\Common\Views\Shared\_AdminShared.cshtml" Link="Views\Shared\_AdminShared.cshtml">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Include="..\..\Common\Views\Shared\_Shared.cshtml" Link="Views\Shared\_Shared.cshtml">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+
+		<None Include="..\..\Common\Views\_ViewImports.cshtml" Link="Views\_ViewImports.cshtml">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+
+		<None Include="..\..\Common\Views\Shared\Components\WidgetProductSpecialOrder\Default.cshtml" Link="Views\Shared\Components\WidgetProductSpecialOrder\Default.cshtml">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Include="..\..\Common\Views\Shared\Components\WidgetProductSpecialOrder\CatalogList.cshtml" Link="Views\Shared\Components\WidgetProductSpecialOrder\CatalogList.cshtml">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+
+		<None Include="..\..\Common\Views\SpecialOrder\Configure.cshtml" Link="Views\SpecialOrder\Configure.cshtml">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+
+		<None Include="..\..\Common\Views\SpecialOrder\PublicInfo.cshtml" Link="Views\SpecialOrder\PublicInfo.cshtml">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Include="..\..\Common\SpecialOrderPlugin.cs" Link="SpecialOrderPlugin.cs" />
+		<Compile Include="..\..\Common\SpecialOrderWidgetSettings.cs" Link="SpecialOrderWidgetSettings.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="n:\nopCommerce 4.60\Presentation\Nop.Web.Framework\Nop.Web.Framework.csproj" />
+		<ProjectReference Include="n:\nopCommerce 4.60\Presentation\Nop.Web\Nop.Web.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Include="..\..\logo.jpg">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+		<Content Include="plugin.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="nopLocalizationHelper" Version="0.7.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="Views\SpecialOrder\Configure.cshtml">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Content\SpecialOrder.css">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Content\SpecialOrder.css.map">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Content\SpecialOrder.less">
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</None>
+		<None Update="Content\SpecialOrder.min.css">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Views\SpecialOrder\PublicInfo.cshtml">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Views\SpecialOrder\ProductAddPopup.cshtml">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Views\Shared\_AdminShared.cshtml">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Views\Shared\_Shared.cshtml">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+
+	<!-- This target execute after "Build" target -->
+	<Target Name="NopTarget" AfterTargets="Build">
+		<!-- Delete unnecessary libraries from plugins path -->
+		<MSBuild Projects="n:\nopCommerce 4.60\Build\ClearPluginAssemblies.proj" Properties="PluginPath=$(MSBuildProjectDirectory)\$(OutDir)" Targets="NopClear" />
+	</Target>
+	<Target Name="FilterCopyLocalItems" AfterTargets="ResolveLockFileCopyLocalProjectDeps">
+		<ItemGroup>
+			<ReferenceCopyLocalPaths Remove="@(ReferenceCopyLocalPaths)" Condition="'%(Filename)' != 'nopLocalizationHelper'" />
+		</ItemGroup>
+	</Target>
+
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+		<Exec Command="call $(ProjectDir)..\BuildHelper\BuildHelper.bat $(ConfigurationName)" />
+	</Target>
+
+</Project>

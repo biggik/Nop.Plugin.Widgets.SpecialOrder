@@ -1,0 +1,20 @@
+﻿@model SpecialOrderModel
+@using Nop.Plugin.Widgets.SpecialOrder.Models;
+@using Nop.Plugin.Widgets.SpecialOrder.Controllers;
+@using Nop.Plugin.Widgets.SpecialOrder.Resources;
+@using System.Linq;
+
+@{
+    NopHtml.AddCssFileParts("~/Plugins/Widgets.SpecialOrder/Content/SpecialOrder.css", excludeFromBundle: true);
+}
+
+@if (Model != null && Model.FullPriceValue > 0m)
+{
+    <div class="specialorder-list">
+        <span class="title">@T(SpecialOrderResources.CatalogList)</span>
+        <span class="fullprice">
+            <span>@T(SpecialOrderResources.Price)</span>
+            <span class="value">@Model.FullPrice</span>
+        </span>
+    </div>
+}

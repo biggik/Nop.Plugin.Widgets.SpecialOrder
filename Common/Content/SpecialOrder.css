@@ -1,0 +1,32 @@
+.specialorder {
+  background: #eee !important;
+  border: 5px solid red;
+  padding: 10px;
+}
+.specialorder .title {
+  color: orangered;
+  font-size: x-large;
+  font-weight: bold;
+  padding-bottom: 3px;
+}
+.specialorder .description {
+  font-size: large;
+  padding-bottom: 3px;
+}
+.specialorder .description .value {
+  color: orangered;
+  font-size: large;
+  font-weight: bold;
+}
+.specialorder-list .title {
+  color: orangered;
+  font-size: medium;
+  font-weight: bold;
+}
+.specialorder-list .fullprice {
+  font-size: small;
+  font-weight: bold;
+}
+.specialorder-list .fullprice .value {
+  color: orangered;
+}
