@@ -1,6 +1,7 @@
 # Nop.Plugin.Widgets.SpecialOrder
-This is a nopCommerce widget plugin for displaying required EPREL information for products such as
-lights or bulbs
+This is a nopCommerce widget plugin that adds support for special order products requiring a down-payment for purchase, with the remainder billed at delivery.
+
+This is done via a technical specification attribute, whose value should be the full price of the product, while the displayed price is a down-payment only. The plugin displays such information in the catalog page as well as the product details page.
 
 # Building
 ## Directory structure
